@@ -17,8 +17,9 @@ import jakarta.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class TodoItemController
  */
+@SuppressWarnings("serial")
 public class TodoItemController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+//	private static final long serialVersionUID = 1L;
        
 	TodoItem todoItem = new TodoItem();
 	TodoItemDaoImpl todoItemDaoImpl = new TodoItemDaoImpl();
@@ -27,10 +28,7 @@ public class TodoItemController extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public TodoItemController() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -46,7 +44,7 @@ public class TodoItemController extends HttpServlet {
 
 		}
 
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+//		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -73,8 +71,9 @@ public class TodoItemController extends HttpServlet {
 
 		if (request.getParameter("updateEmployee") != null) {
 			int id1 = Integer.parseInt(request.getParameter("id"));
-			String description = request.getParameter("description");
-			todoItemDaoImpl.updateTodoItem(id1, description);
+			String descriptionupdate = request.getParameter("descriptionupdate");
+			todoItemDaoImpl.updateTodoItem(id1, descriptionupdate);
+
 			RequestDispatcher rd = request.getRequestDispatcher("AddTodoItem.jsp");
 			rd.forward(request, response);
 		}
@@ -83,7 +82,7 @@ public class TodoItemController extends HttpServlet {
 			int id2 = Integer.parseInt(request.getParameter("id"));
 			todoItem.setId(id2);
 			todoItemDaoImpl.deleteTodoItem(todoItem);
-			RequestDispatcher rd = request.getRequestDispatcher("AddTodoItem.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("EmployeeAdd.jsp");
 			rd.forward(request, response);
 		}
 

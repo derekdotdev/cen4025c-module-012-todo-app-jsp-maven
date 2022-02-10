@@ -9,10 +9,25 @@ import com.derekdileo.pojo.TodoItem;
 
 public class HibernateUtil {
 
-//	private HibernateUtil() {
-//	}
-
 	private static SessionFactory sessionFactory;
+//	public static SessionFactory getSessionFactory() {
+//		if (sessionFactory == null) {
+//			
+//			try {
+//				
+//				Configuration configuration = new Configuration();
+//				
+//				
+//				
+//			} catch (Exception e) {
+//				e.printStackTrace();
+//			}
+//			
+//		}
+//		
+//		
+//		
+//	}
 
 	static {
 
