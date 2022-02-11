@@ -1,11 +1,11 @@
-package com.derekdileo.TodoItemDAOImpl;
+package net.todoapp.utl;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
-import com.derekdileo.pojo.TodoItem;
+import net.todoapp.model.TodoItem;
 
 public class HibernateUtil {
 

@@ -1,18 +1,17 @@
-package com.derekdileo.Controller;
+package net.todoapp.web;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.derekdileo.DAO.TodoItemDao;
-import com.derekdileo.TodoItemDAOImpl.TodoItemDaoImpl;
-import com.derekdileo.pojo.TodoItem;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import net.todoapp.dao.TodoItemDao;
+import net.todoapp.dao.TodoItemDaoImpl;
+import net.todoapp.model.TodoItem;
 
 /**
  * Servlet implementation class TodoItemController

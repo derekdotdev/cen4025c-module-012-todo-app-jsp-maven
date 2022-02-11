@@ -1,4 +1,4 @@
-package com.derekdileo.TodoItemDAOImpl;
+package net.todoapp.dao;
 
 
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import com.derekdileo.DAO.TodoItemDao;
-import com.derekdileo.pojo.TodoItem;
+import net.todoapp.model.TodoItem;
+import net.todoapp.utl.HibernateUtil;
 
 public class TodoItemDaoImpl implements TodoItemDao {
 

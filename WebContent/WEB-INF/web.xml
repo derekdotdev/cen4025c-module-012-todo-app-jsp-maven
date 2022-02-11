@@ -6,7 +6,7 @@
     <description></description>
     <display-name>TodoItemController</display-name>
     <servlet-name>TodoItemController</servlet-name>
-    <servlet-class>com.derekdileo.Controller.TodoItemController</servlet-class>
+    <servlet-class>net.todoapp.web.TodoItemController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>TodoItemController</servlet-name>

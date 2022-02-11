@@ -1,4 +1,4 @@
-package com.derekdileo;
+package net.todoapp;
 
 public class WelcomeToApp {
 

@@ -1,4 +1,4 @@
-package com.derekdileo.pojo;
+package net.todoapp.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

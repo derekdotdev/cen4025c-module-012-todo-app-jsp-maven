@@ -1,8 +1,8 @@
-package com.derekdileo.DAO;
+package net.todoapp.dao;
 
 import java.util.List;
 
-import com.derekdileo.pojo.TodoItem;
+import net.todoapp.model.TodoItem;
 
 public interface TodoItemDao {
 
