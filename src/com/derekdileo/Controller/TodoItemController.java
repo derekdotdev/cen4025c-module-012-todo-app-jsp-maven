@@ -2,7 +2,6 @@ package com.derekdileo.Controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.List;
 
 import com.derekdileo.DAO.TodoItemDao;
@@ -53,10 +52,10 @@ public class TodoItemController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		Enumeration<String> params = request.getParameterNames();
-		while (params.hasMoreElements()) {
-			System.out.println(params.nextElement());
-		}
+//		Enumeration<String> params = request.getParameterNames();
+//		while (params.hasMoreElements()) {
+//			System.out.println(params.nextElement());
+//		}
 
 		if (request.getParameter("showTodoItem") != null) {
 			List<TodoItem> todoItemList = new ArrayList<>();
