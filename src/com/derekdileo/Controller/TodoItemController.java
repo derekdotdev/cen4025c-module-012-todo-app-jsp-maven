@@ -2,6 +2,7 @@ package com.derekdileo.Controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
 
 import com.derekdileo.DAO.TodoItemDao;
@@ -52,6 +53,11 @@ public class TodoItemController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		Enumeration<String> params = request.getParameterNames();
+		while (params.hasMoreElements()) {
+			System.out.println(params.nextElement());
+		}
+
 		if (request.getParameter("showTodoItem") != null) {
 			List<TodoItem> todoItemList = new ArrayList<>();
 			todoItemList = todoItemDaoImpl.showAllTodoItems();
@@ -69,7 +75,7 @@ public class TodoItemController extends HttpServlet {
 //			rd.forward(request, response);
 //		}
 
-		if (request.getParameter("updateEmployee") != null) {
+		if (request.getParameter("updateTodoItem") != null) {
 			int id1 = Integer.parseInt(request.getParameter("id"));
 			String descriptionupdate = request.getParameter("descriptionupdate");
 			todoItemDaoImpl.updateTodoItem(id1, descriptionupdate);
@@ -78,11 +84,11 @@ public class TodoItemController extends HttpServlet {
 			rd.forward(request, response);
 		}
 
-		if (request.getParameter("deleteEmployee") != null) {
+		if (request.getParameter("deleteTodoItem") != null) {
 			int id2 = Integer.parseInt(request.getParameter("id"));
 			todoItem.setId(id2);
 			todoItemDaoImpl.deleteTodoItem(todoItem);
-			RequestDispatcher rd = request.getRequestDispatcher("EmployeeAdd.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("AddTodoItem.jsp");
 			rd.forward(request, response);
 		}
 

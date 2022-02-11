@@ -67,8 +67,8 @@ $(document).ready(function(){
 			
 			Update Description: <input id="descriptionupdate" type="text" name="descriptionupdate"> <br><br>
 
-			<button type="submit" id="updateTodoItem" name="updateTodoItem"> Update</button> <br>			
-			<button type="submit" id="deleteTodoItem" name="deleteTodoItem"> Delete </button>		
+			<button type="submit" name="updateTodoItem"> Update</button> <br>			
+			<button type="submit" name="deleteTodoItem"> Delete </button>		
 		
 		</form>
 
