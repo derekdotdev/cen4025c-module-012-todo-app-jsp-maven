@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+#buttoncontainer {
+	text-align: left;
+}
+
+.button {
+	display: inline-block;
+}

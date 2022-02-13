@@ -10,24 +10,6 @@ import net.todoapp.model.TodoItem;
 public class HibernateUtil {
 
 	private static SessionFactory sessionFactory;
-//	public static SessionFactory getSessionFactory() {
-//		if (sessionFactory == null) {
-//			
-//			try {
-//				
-//				Configuration configuration = new Configuration();
-//				
-//				
-//				
-//			} catch (Exception e) {
-//				e.printStackTrace();
-//			}
-//			
-//		}
-//		
-//		
-//		
-//	}
 
 	static {
 
@@ -35,7 +17,6 @@ public class HibernateUtil {
 			// Create the SessionFactory from hibernate.cfg.xml
 			Configuration configuration = new Configuration().configure("/hibernate.cfg.xml");
 			configuration.addAnnotatedClass(TodoItem.class);
-//			Configuration config = new Configuration().configure().addAnnotatedClass(TodoItem.class);
 
 			StandardServiceRegistryBuilder srb = new StandardServiceRegistryBuilder();
 

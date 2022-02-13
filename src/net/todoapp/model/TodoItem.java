@@ -1,5 +1,7 @@
 package net.todoapp.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,18 +14,23 @@ import javax.persistence.Table;
  * This is a model class which represents a TodoItem entity
  * @author Derek DiLeo
  * */
+// Java Bean 
+// 1. Implements Serializable
+// 2. No argument constructor
+// 3. Private members w/ getters and setters
 
+@SuppressWarnings("serial")
 @Entity
 @Table(name = "todo_items")
-public class TodoItem {
+public class TodoItem implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	protected int id;
+	private int id;
 
 	@Column(name = "description")
-	protected String description;
+	private String description;
 
 	public TodoItem() {
 	}

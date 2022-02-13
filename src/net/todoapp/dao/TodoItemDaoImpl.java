@@ -66,30 +66,6 @@ public class TodoItemDaoImpl implements TodoItemDao {
 
 	}
 
-//	@Override
-//	public void updateTodoItem(TodoItem item) {
-//
-//		Session session = getSession();
-//		session.beginTransaction();
-//
-//		try {
-//			
-//			item.setDescription(description);
-//
-//			session.update(item);
-//			session.getTransaction().commit();
-//			session.close();
-//			System.out.println("Todo Item Updated from: [ " + tempDesc + " ] to: [ " + description + " ]");
-//
-//		} catch (Exception e) {
-//			System.err.println("No Todo Item found with ID: " + id);
-//			System.out.println("No Todo Item found with ID: " + id);
-//			session.close();
-//
-//		}
-//
-//	}
-
 	@Override
 	public void updateTodoItem(int id, String description) {
 
@@ -138,6 +114,5 @@ public class TodoItemDaoImpl implements TodoItemDao {
 
 		}
 	}
-
 
 }
