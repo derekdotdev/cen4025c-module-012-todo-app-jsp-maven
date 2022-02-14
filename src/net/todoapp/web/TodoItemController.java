@@ -51,9 +51,14 @@ public class TodoItemController extends HttpServlet {
 			List<TodoItem> todoItemList = new ArrayList<>();
 			todoItemList = todoItemDaoImpl.showAllTodoItems();
 			request.setAttribute("todoItemList", todoItemList);
-			RequestDispatcher rd = request.getRequestDispatcher("ShowAll.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("ShowAllRadio.jsp");
 			rd.forward(request, response);
 		}
+
+//		if (request.getParameter("addNewTodoItem") != null) {
+//			RequestDispatcher rd = request.getRequestDispatcher("AddTodoItem.jsp");
+//			rd.forward(request, response);
+//		}
 
 //		request.setAttribute("showTodoItem", "showTodoItem");
 //		getServletContext().getRequestDispatcher("/ShowAll.jsp").forward(request, response);
@@ -82,11 +87,16 @@ public class TodoItemController extends HttpServlet {
 
 		}
 
+		if (request.getParameter("addNewTodoItem") != null) {
+			RequestDispatcher rd = request.getRequestDispatcher("AddTodoItem.jsp");
+			rd.forward(request, response);
+		}
+
 		if (request.getParameter("showTodoItem") != null) {
 			List<TodoItem> todoItemList = new ArrayList<>();
 			todoItemList = todoItemDaoImpl.showAllTodoItems();
 			request.setAttribute("todoItemList", todoItemList);
-			RequestDispatcher rd = request.getRequestDispatcher("ShowAll.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("ShowAllRadio.jsp");
 			rd.forward(request, response);
 		}
 
