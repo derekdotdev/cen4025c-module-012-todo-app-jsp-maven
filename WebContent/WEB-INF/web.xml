@@ -6,11 +6,15 @@
     <servlet-name>TodoItemController</servlet-name>
     <servlet-class>net.todoapp.web.TodoItemController</servlet-class>
   </servlet>
+  <servlet-mapping>
+    <servlet-name>TodoItemController</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
   <session-config>
     <session-timeout>30</session-timeout>
   </session-config>
   <welcome-file-list>
-    <welcome-file>AddTodoItem.jsp</welcome-file>
+    <welcome-file>Welcome.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
     <description></description>
@@ -18,8 +22,4 @@
     <servlet-name>TodoItemServlet</servlet-name>
     <servlet-class>net.todoapp.web.TodoItemServlet</servlet-class>
   </servlet>
-  <servlet-mapping>
-    <servlet-name>TodoItemServlet</servlet-name>
-    <url-pattern>/TodoItemServlet</url-pattern>
-  </servlet-mapping>
 </web-app>

@@ -19,7 +19,7 @@ import net.todoapp.model.TodoItem;
  * Servlet implementation class TodoItemController
  */
 @SuppressWarnings("serial")
-@WebServlet(name = "TodoItemController", urlPatterns = { "/", "/todo" })
+@WebServlet(name = "TodoItemController", urlPatterns = { "", "/" })
 public class TodoItemController extends HttpServlet {
 //	private static final long serialVersionUID = 1L;
        
@@ -93,10 +93,20 @@ public class TodoItemController extends HttpServlet {
 		if (request.getParameter("updateTodoItem") != null) {
 			int id1 = Integer.parseInt(request.getParameter("id"));
 			String descriptionupdate = request.getParameter("descriptionupdate");
-			todoItemDaoImpl.updateTodoItem(id1, descriptionupdate);
 
-			RequestDispatcher rd = request.getRequestDispatcher("AddTodoItem.jsp");
-			rd.forward(request, response);
+			if (descriptionupdate == null || descriptionupdate.isBlank() || descriptionupdate.isEmpty()) {
+
+				System.out.println("Error: Description cannot be empty!");
+				String error = "Error: Description cannot be empty";
+				request.setAttribute(error, error);
+				RequestDispatcher rd = request.getRequestDispatcher("AddTodoItem.jsp");
+				rd.forward(request, response);
+			} else {
+				todoItemDaoImpl.updateTodoItem(id1, descriptionupdate);
+				RequestDispatcher rd = request.getRequestDispatcher("AddTodoItem.jsp");
+				rd.forward(request, response);
+			}
+
 		}
 
 		if (request.getParameter("deleteTodoItem") != null) {
