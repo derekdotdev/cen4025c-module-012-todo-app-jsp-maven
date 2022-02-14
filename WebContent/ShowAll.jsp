@@ -11,13 +11,17 @@
 
 <script src="https://cdn.tailwindcss.com"></script>
 
+<%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/styles.css"/> --%>
+<%-- <link href="<c:url value="/resources/css/styles.css" />" rel="stylesheet"> --%>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <title>Show All Todo Items</title>
 
 <!-- Changed jquery version 1.12.4 to newest stable release of 3.6.0 -->
 <script
-	type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js>"></script>
+	type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js>">
+</script>
 <script>
 	$(document).ready(function() {
 		$("#deleteTodoItemBtn").hide();
@@ -43,12 +47,12 @@
 	<div class="bg-white mx-auto w-1/2 py-5 shadow-xl rounded-3xl my-12 max-w-2xl" id="showAllPage">
 		
 		<div class="bg-white mx-auto text-center px-1 py-1" id="todoListH2">
-			<%-- <img src="<c:url value="${list.jpeg}"/>"/>
 			
+			<%-- <img src="<c:url value="${list.jpeg}"/>"/>
 			<img src="${pageContext.request.contextPath}/resources/images/list.jpeg">
 			<img src="${pageContext.request.contextPath}/list.jpeg"> --%>
-			
 			<!-- <img src="../resources/images/list.jpeg" /> -->
+			
 			<h2 class="text-4xl font-semibold border-b pb-2 mx-6">To Do List</h2>	
 		</div> <!-- todoListH2 -->
 		
@@ -69,28 +73,28 @@
 
 			</select> 
 			
-			<span class="mx-2"></span>
+			<span class="mx-1"></span>
 			
 			Update: 
-			<input checked type="checkbox" id="update" onclick="document.getElementById('deleteTodoItemBtn').hidden=this.checked; document.getElementById('updateTodoItemBtn').disabled=!this.checked; document.getElementById('updateDescription').hidden=!this.checked; ">
+			<input type="radio" name="selection" id="update" onclick="document.getElementById('deleteTodoItemBtn').hidden=this.checked; document.getElementById('updateDescription').hidden=!this.checked; document.getElementById('updateTodoItemBtn').hidden=!this.checked;">
 			
 			<span class="mx-2"></span> 
 			
 			Delete: 
-			<input type="checkbox" id="delete" onclick="document.getElementById('updateTodoItemBtn').hidden=this.checked; document.getElementById('updateDescription').hidden=this.checked; document.getElementById('deleteTodoItemBtn').disabled=!this.checked;"><br><br> 
+			<input type="radio" name="selection" id="delete" onclick="document.getElementById('updateTodoItemBtn').hidden=this.checked; document.getElementById('updateDescription').hidden=this.checked; document.getElementById('deleteTodoItemBtn').hidden=!this.checked;"><br><br> 
 			
-			<div id="updateDescription">
+			<div hidden="true" id="updateDescription">
 				<p id="updateDescriptionLabel">Update Description: </p>
-				<input type="text" class="w-1/2 p-1 border-2 placeholder-blue-800 border-blue-700 appearance-none rounded-lg focus:outline-none focus:ring-2" id="descriptionupdate" name="descriptionupdate"><br><br>
+				<input type="text" placeholder="New Details" class="text-center w-1/2 p-1 border-2 placeholder-blue-800 border-blue-700 appearance-none rounded-lg focus:outline-none focus:ring-2" id="descriptionupdate" name="descriptionupdate"><br><br>
 			</div>
 			
 			
 			<div class="text-4xl font-semibold border-b pb-2 mx-6 text-center items-center" id="buttonContainer" style="display: inline-block">
-				<button type="submit" id="updateTodoItemBtn" name="updateTodoItem" class="bg-blue-100 text-xl font-semibold px-4 py-1 rounded-lg hover:bg-blue-500 hover:text-white disabled:bg-white disabled:text-white">Update Item</button>
+				<button hidden="true" type="submit" id="updateTodoItemBtn" name="updateTodoItem" class="bg-blue-100 text-xl font-semibold px-4 py-1 rounded-lg hover:bg-blue-500 hover:text-white disabled:bg-white disabled:text-white">Update Item</button>
 				
 				<button hidden="true" type="submit" id="deleteTodoItemBtn" name="deleteTodoItem" class="bg-blue-100 text-xl font-semibold px-4 py-1 rounded-lg hover:bg-blue-500 hover:text-white disabled:bg-white disabled:text-white">Delete Item</button><br>
 				
-				<button type="submit" id="addTodoItemBtn" name="addTodoItem" class="bg-blue-100 text-xl font-semibold px-4 py-1 rounded-lg hover:bg-blue-500 hover:text-white">Add New Item</button>
+				<button type="submit" id="addNewTodoItemBtn" name="addNewTodoItem" class="bg-blue-100 text-xl font-semibold px-4 py-1 rounded-lg hover:bg-blue-500 hover:text-white">Add New Item</button>
 			</div> <!-- buttonContainer -->
 			
 		</form> <!-- TodoItemController POST -->

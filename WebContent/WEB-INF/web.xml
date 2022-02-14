@@ -16,10 +16,4 @@
   <welcome-file-list>
     <welcome-file>Welcome.jsp</welcome-file>
   </welcome-file-list>
-  <servlet>
-    <description></description>
-    <display-name>TodoItemServlet</display-name>
-    <servlet-name>TodoItemServlet</servlet-name>
-    <servlet-class>net.todoapp.web.TodoItemServlet</servlet-class>
-  </servlet>
 </web-app>

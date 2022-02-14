@@ -30,9 +30,6 @@ public class TodoItemController extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-	// If ShowAll.jsp is set to welcome-file in web.xml, the list doesn't populate..
-	// Will an override of the init() method achieve this?
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -40,29 +37,28 @@ public class TodoItemController extends HttpServlet {
 
 		if (request.getParameter("addTodoItem") != null) {
 			String description = request.getParameter("description");
-			todoItem.setDescription(description);
-			todoItemDaoImpl.saveTodoItem(todoItem);
-			RequestDispatcher rd = request.getRequestDispatcher("AddTodoItem.jsp");
-			rd.forward(request, response);
-
+			if (description == null || description.isBlank() || description.isEmpty()) {
+				System.out.println("Error: Description cannot be empty!");
+				String error = "Error: Description cannot be empty";
+				request.setAttribute("error", error);
+				RequestDispatcher rd = request.getRequestDispatcher("AddTodoItem.jsp");
+				rd.forward(request, response);
+			} else {
+				todoItem.setDescription(description);
+				todoItemDaoImpl.saveTodoItem(todoItem);
+				RequestDispatcher rd = request.getRequestDispatcher("AddTodoItem.jsp");
+				rd.forward(request, response);
+			}
 		}
 
 		if (request.getParameter("showTodoItem") != null) {
 			List<TodoItem> todoItemList = new ArrayList<>();
 			todoItemList = todoItemDaoImpl.showAllTodoItems();
 			request.setAttribute("todoItemList", todoItemList);
-			RequestDispatcher rd = request.getRequestDispatcher("ShowAllRadio.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("ShowAll.jsp");
 			rd.forward(request, response);
 		}
 
-//		if (request.getParameter("addNewTodoItem") != null) {
-//			RequestDispatcher rd = request.getRequestDispatcher("AddTodoItem.jsp");
-//			rd.forward(request, response);
-//		}
-
-//		request.setAttribute("showTodoItem", "showTodoItem");
-//		getServletContext().getRequestDispatcher("/ShowAll.jsp").forward(request, response);
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	@Override
@@ -76,15 +72,20 @@ public class TodoItemController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-//		getServletContext().getRequestDispatcher("/ShowAll.jsp").forward(request, response);
-
 		if (request.getParameter("addTodoItem") != null) {
 			String description = request.getParameter("description");
-			todoItem.setDescription(description);
-			todoItemDaoImpl.saveTodoItem(todoItem);
-			RequestDispatcher rd = request.getRequestDispatcher("AddTodoItem.jsp");
-			rd.forward(request, response);
-
+			if (description == null || description.isBlank() || description.isEmpty()) {
+				System.out.println("Error: Description cannot be empty!");
+				String error = "Error: Description cannot be empty";
+				request.setAttribute("error", error);
+				RequestDispatcher rd = request.getRequestDispatcher("AddTodoItem.jsp");
+				rd.forward(request, response);
+			} else {
+				todoItem.setDescription(description);
+				todoItemDaoImpl.saveTodoItem(todoItem);
+				RequestDispatcher rd = request.getRequestDispatcher("AddTodoItem.jsp");
+				rd.forward(request, response);
+			}
 		}
 
 		if (request.getParameter("addNewTodoItem") != null) {
@@ -96,7 +97,7 @@ public class TodoItemController extends HttpServlet {
 			List<TodoItem> todoItemList = new ArrayList<>();
 			todoItemList = todoItemDaoImpl.showAllTodoItems();
 			request.setAttribute("todoItemList", todoItemList);
-			RequestDispatcher rd = request.getRequestDispatcher("ShowAllRadio.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("ShowAll.jsp");
 			rd.forward(request, response);
 		}
 
@@ -105,10 +106,9 @@ public class TodoItemController extends HttpServlet {
 			String descriptionupdate = request.getParameter("descriptionupdate");
 
 			if (descriptionupdate == null || descriptionupdate.isBlank() || descriptionupdate.isEmpty()) {
-
 				System.out.println("Error: Description cannot be empty!");
 				String error = "Error: Description cannot be empty";
-				request.setAttribute(error, error);
+				request.setAttribute("error", error);
 				RequestDispatcher rd = request.getRequestDispatcher("AddTodoItem.jsp");
 				rd.forward(request, response);
 			} else {
@@ -127,13 +127,11 @@ public class TodoItemController extends HttpServlet {
 			rd.forward(request, response);
 		}
 
-//		doGet(request, response);
 	}
 
 	@Override
 	public String getServletInfo() {
 		return "Short description";
-	} // </editor-fold>
-
+	}
 
 }
