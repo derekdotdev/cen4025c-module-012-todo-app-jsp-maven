@@ -55,13 +55,11 @@
 			
 			<h2 class="text-4xl font-semibold border-b pb-2 mx-6">To Do List</h2>	
 		</div> <!-- todoListH2 -->
-		
-		
+				
 		<div class="bg-white mx-full py-5 pl-5 text-center">
 		
 			<form action="TodoItemController" method="POST">
-
-			
+	
 			Item to Manage:
 			<select class="text-left" name="id">
 
@@ -87,8 +85,7 @@
 				<p id="updateDescriptionLabel">Update Description: </p>
 				<input type="text" placeholder="New Details" class="text-center w-1/2 p-1 border-2 placeholder-blue-800 border-blue-700 appearance-none rounded-lg focus:outline-none focus:ring-2" id="descriptionupdate" name="descriptionupdate"><br><br>
 			</div>
-			
-			
+						
 			<div class="text-4xl font-semibold border-b pb-2 mx-6 text-center items-center" id="buttonContainer" style="display: inline-block">
 				<button hidden="true" type="submit" id="updateTodoItemBtn" name="updateTodoItem" class="bg-blue-100 text-xl font-semibold px-4 py-1 rounded-lg hover:bg-blue-500 hover:text-white disabled:bg-white disabled:text-white">Update Item</button>
 				
