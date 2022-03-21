@@ -19,7 +19,7 @@ import net.todoapp.model.TodoItem;
  * Servlet implementation class TodoItemController
  */
 @SuppressWarnings("serial")
-@WebServlet(name = "TodoItemController", urlPatterns = { "", "/" })
+@WebServlet(name = "TodoItemController", urlPatterns = { "/TodoItemController" })
 public class TodoItemController extends HttpServlet {
 //	private static final long serialVersionUID = 1L;
        
@@ -63,7 +63,6 @@ public class TodoItemController extends HttpServlet {
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
-		// TODO Auto-generated method stub
 		super.init(config);
 	}
 

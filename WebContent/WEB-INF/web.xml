@@ -16,4 +16,11 @@
   <welcome-file-list>
     <welcome-file>Welcome.jsp</welcome-file>
   </welcome-file-list>
+  <!-- Enable servlets as welcome files -->
+<!--   <context-param>
+  	<param-name>
+  		org.eclipse.jetty.servlet.Default.welcomeServlets
+  	</param-name>
+  	<param-value>true</param-value>
+  </context-param> -->
 </web-app>
