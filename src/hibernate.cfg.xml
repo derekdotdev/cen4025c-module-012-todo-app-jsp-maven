@@ -28,7 +28,8 @@
         <!-- Set the current session context -->
         <property name="current_session_context_class">thread</property>
         
-		<mapping class="com.derekdileo.pojo.TodoItem"></mapping>
+		<!-- <mapping class="com.derekdileo.pojo.TodoItem"></mapping> -->
+		<mapping class="net.todoapp.model.TodoItem"></mapping>
     
     </session-factory>
     

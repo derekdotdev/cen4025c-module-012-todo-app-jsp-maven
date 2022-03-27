@@ -46,6 +46,7 @@ public class TodoItemController extends HttpServlet {
 			} else {
 				todoItem.setDescription(description);
 				todoItemDaoImpl.saveTodoItem(todoItem);
+
 				RequestDispatcher rd = request.getRequestDispatcher("AddTodoItem.jsp");
 				rd.forward(request, response);
 			}
@@ -82,6 +83,7 @@ public class TodoItemController extends HttpServlet {
 			} else {
 				todoItem.setDescription(description);
 				todoItemDaoImpl.saveTodoItem(todoItem);
+
 				RequestDispatcher rd = request.getRequestDispatcher("AddTodoItem.jsp");
 				rd.forward(request, response);
 			}
