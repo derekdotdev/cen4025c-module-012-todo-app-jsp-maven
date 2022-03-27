@@ -1,0 +1,6 @@
+net/todoapp/model/TodoItem.class
+net/todoapp/web/TodoItemController.class
+net/todoapp/dao/TodoItemDao.class
+net/todoapp/utl/Database.class
+net/todoapp/utl/HibernateUtil.class
+net/todoapp/dao/TodoItemDaoImpl.class

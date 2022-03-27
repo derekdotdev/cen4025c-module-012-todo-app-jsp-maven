@@ -5,6 +5,9 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <name>todo-app</name>
+  <properties>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
   <description>Mavenized version of module-007-todo-app-jsp</description>
   <dependencies>
     <dependency>
